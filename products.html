@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Product Catalog — World Fine Bio Chemicals</title>
+<meta name="description" content="The complete WFBC catalog — agro chemicals, plant growth regulators, fertilizers, industrial solvents, lab supply and food-grade additives. Supplied in bulk from Ahmedabad, Gujarat."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="preload" as="image" href="assets/images/prod-pgr.jpg"/>
+<link rel="stylesheet" href="assets/css/style.css?v=2"/>
+<link rel="stylesheet" href="assets/css/products.css?v=11"/>
+</head>
+<body class="prod-page">
+
+<!-- NAV — identical to index.html -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="World Fine Bio Chemicals"><img src="assets/images/logo.png" alt="World Fine Bio Chemicals" class="nav-logo-img"/></a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-a">Home</a>
+    <a href="products.html" class="nav-a nav-a--active" aria-current="page">Products</a>
+    <a href="contact.html" class="nav-a">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta" id="nav-enq">Send Enquiry</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO — same structure as index.html
+═══════════════════════════════════════════════════ -->
+<section id="hero" class="hero--catalog" aria-label="Hero — World Fine Bio Chemicals product catalog">
+  <div class="hero-image-bg" aria-hidden="true">
+    <div class="hero-img-scroll" id="hero-img-scroll">
+      <div class="hero-img-float"></div>
+    </div>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-head">
+      <p class="hero-label">
+        <span class="hero-label-line"></span>
+        Product Catalog — Gujarat, India
+      </p>
+      <h1 class="hero-h1" aria-label="Our complete catalog.">
+        <span class="hero-h1-line"><span class="hero-h1-word">Our</span></span>
+        <span class="hero-h1-line"><span class="hero-h1-word">complete</span></span>
+        <span class="hero-h1-line"><span class="hero-h1-word italic">catalog.</span></span>
+      </h1>
+    </div>
+    <div class="hero-foot">
+      <p class="hero-desc">Twelve product lines across six categories — agro chemicals, plant growth regulators, fertilizers, industrial solvents, laboratory supply and food&#8209;grade additives.</p>
+      <a href="#catalog" class="hero-cta" data-scroll>
+        Browse the catalog
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+          <path d="M1 5.5h9M5.5 1l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="hero-scroll-line"></span>
+    Scroll
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker-track"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     CATALOG INTRO — light ground opens here
+═══════════════════════════════════════════════════ -->
+<section class="cat-intro" id="catalog" aria-label="About the catalog">
+  <div class="cat-intro-grid">
+    <div class="cat-intro-lead">
+      <p class="section-label rv">The Catalog</p>
+      <h2 class="cat-intro-h rv">Twelve lines,<br/>six <em>categories.</em></h2>
+    </div>
+    <div class="cat-intro-side">
+      <p class="cat-intro-p rv">Everything below ships in bulk from Ahmedabad with a certificate of analysis, full documentation and pack sizes that match how you buy. Filter by category, or sort the whole list.</p>
+      <div class="stats-row cat-stats rv">
+        <div class="stat">
+          <div class="stat-n"><span data-count="12">0</span></div>
+          <div class="stat-l">Products</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n"><span data-count="6">0</span></div>
+          <div class="stat-l">Categories</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n"><span data-count="500">0</span>+</div>
+          <div class="stat-l">Clients</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CATALOG — filter rail + grid
+═══════════════════════════════════════════════════ -->
+<div class="cat-wrap">
+
+  <!-- Sticky filter + sort rail -->
+  <div class="rail" id="rail">
+    <div class="rail-inner">
+      <div class="rail-scroll">
+        <div class="rail-filters" id="rail-filters" role="group" aria-label="Filter products by category">
+          <!-- buttons injected by products.js -->
+          <span class="rail-ind" id="rail-ind" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="rail-sort">
+        <button type="button" class="sort-btn" id="sort-btn" aria-haspopup="true" aria-expanded="false" aria-controls="sort-menu">
+          <span class="sort-btn-k">Sort</span>
+          <span class="sort-btn-v" id="sort-val">Featured</span>
+          <svg class="sort-chev" width="9" height="9" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+            <path d="M2 3.5L5 6.5l3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="sort-menu" id="sort-menu" role="menu" aria-label="Sort products">
+          <button type="button" role="menuitemradio" aria-checked="true"  data-sort="featured">Featured</button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-sort="az">Name A–Z</button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-sort="za">Name Z–A</button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-sort="cat">Category</button>
+        </div>
+      </div>
+    </div>
+    <span class="rail-progress" id="rail-progress" aria-hidden="true"></span>
+  </div>
+
+  <main class="catalog" aria-label="Product catalog">
+    <!-- Status header -->
+    <div class="cat-status" aria-live="polite">
+      <div class="cat-status-text">
+        <h2 class="cat-status-h" id="cat-status-h">All products</h2>
+        <p class="cat-status-p" id="cat-status-p">Twelve lines across six categories, supplied in bulk from Ahmedabad.</p>
+      </div>
+      <p class="cat-status-n"><span id="cat-count">12</span> products</p>
+    </div>
+
+    <!-- Product grid -->
+    <div class="plates" id="plates"><!-- injected by products.js --></div>
+
+    <!-- Empty state -->
+    <div class="cat-empty" id="cat-empty" hidden>
+      <p class="cat-empty-h">Nothing listed here yet.</p>
+      <p class="cat-empty-p">This category is being added to. Ask us directly and we will quote from stock.</p>
+      <button type="button" class="cat-empty-btn" data-reset>Show all products</button>
+    </div>
+  </main>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     ENQUIRY BAND — dark, mirrors index
+═══════════════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════
+     ENQUIRY SECTION — Awwwards Light Theme Showcase
+═══════════════════════════════════════════════════ -->
+<section class="enq" aria-label="Enquiries">
+  <div class="enq-inner">
+    <div class="enq-text">
+      <h2 class="enq-h rv">
+        Tell us the product,<br/>
+        grade and <em>quantity.</em>
+      </h2>
+      <p class="enq-p rv">
+        We reply with pricing, availability and lead time within 24 hours.
+      </p>
+
+      <div class="enq-guarantees rv">
+        <div class="enq-g-item">
+          <span class="enq-g-val">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            &lt; 24 Hours
+          </span>
+          <span class="enq-g-lbl">Guaranteed quotation turnaround</span>
+        </div>
+        <div class="enq-g-item">
+          <span class="enq-g-val">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            100% Tested
+          </span>
+          <span class="enq-g-lbl">Batch COA &amp; technical specs included</span>
+        </div>
+        <div class="enq-g-item">
+          <span class="enq-g-val">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green);"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Flexible MOQ
+          </span>
+          <span class="enq-g-lbl">25kg bags to multi-ton bulk shipments</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: High-End Contact & Action Card -->
+    <div class="enq-card rv">
+      <div class="enq-card-head">
+        <span class="enq-card-tag">Commercial Enquiries</span>
+        <span class="enq-card-sla">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Direct Management Line
+        </span>
+      </div>
+
+      <div class="enq-person">
+        <img src="assets/images/founder-abhishek.jpg" alt="Abhishek Bhanderi" class="enq-person-avatar" />
+        <div class="enq-person-info">
+          <span class="enq-person-name">Abhishek Bhanderi</span>
+          <span class="enq-person-role">Founder &amp; Commercial Director · WFBC</span>
+        </div>
+      </div>
+
+      <a href="contact.html" class="enq-btn-primary" id="enq-cta-btn">
+        <span>Send an enquiry</span>
+        <svg width="13" height="13" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+          <path d="M1 5.5h9M5.5 1l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <a href="tel:+917922874567" class="enq-phone-row" aria-label="Call +91 79 2287 4567 Abhishek Bhanderi">
+        <span class="enq-phone-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </span>
+        <span class="enq-phone-num">+91 79 2287 4567</span>
+        <span class="enq-phone-sep">·</span>
+        <span class="enq-phone-user">Abhishek Bhanderi</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER — identical to index.html -->
+<footer role="contentinfo">
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand-wrap">
+        <a href="index.html" class="ft-brand-link" aria-label="World Fine Bio Chemicals">
+          <img src="assets/images/logo.png" alt="World Fine Bio Chemicals" class="ft-logo-img" />
+          <span class="ft-brand-name">World Fine Bio Chemicals</span>
+        </a>
+      </div>
+      <p class="ft-tag">Chemistry for the field, the factory, and the shelf. High-purity bio chemicals formulated and supplied from Ahmedabad, Gujarat.</p>
+    </div>
+    <div class="ft-col">
+      <div class="ft-col-h">Products</div>
+      <ul>
+        <li><a href="products.html#c-agro">Agro Chemicals</a></li>
+        <li><a href="products.html#c-fertilizer">Fertilizers</a></li>
+        <li><a href="products.html#c-industrial">Industrial Chemicals</a></li>
+        <li><a href="products.html#c-lab">Lab Chemicals</a></li>
+        <li><a href="products.html#c-food">Food Additives</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <div class="ft-col-h">Company</div>
+      <ul>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#founder">Our Story</a></li>
+        <li><a href="index.html#vision">Vision &amp; Infrastructure</a></li>
+        <li><a href="contact.html">Contact &amp; Enquiries</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <div class="ft-col-h">Reach Us</div>
+      <ul>
+        <li>
+          <a href="tel:+917922874567" class="ft-contact-item">
+            <strong>+91 79 2287 4567</strong>
+            <span class="ft-sub">Abhishek Bhanderi · Direct Line</span>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" class="ft-addr-item">
+            <span>1st Floor, Inca Complex, Above Sawan Hotel,</span><br/>
+            <span>Sanand Chokdi, Sarkhej, Ahmedabad</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:info@worldfinebiochem.com">info@worldfinebiochem.com</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span>&copy; 2026 World Fine Bio Chemicals. All rights reserved.</span>
+    <span>Abhishek Bhanderi · Founder &amp; Commercial Lead</span>
+    <span>Sanand Chokdi, Sarkhej, Ahmedabad</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" crossorigin="anonymous"></script>
+<script src="assets/js/products-data.js?v=2"></script>
+<script src="assets/js/products.js?v=12"></script>
+</body>
+</html>

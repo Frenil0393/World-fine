@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title id="pg-title">Product — World Fine Bio Chemicals</title>
+  <meta name="description" id="pg-desc" content="Premium chemical product by World Fine Bio Chemicals, Ahmedabad." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css?v=2" />
+  <link rel="stylesheet" href="assets/css/product-detail.css?v=5" />
+</head>
+
+<body class="pd-page">
+
+  <!-- ══ NAV — same component as index.html ══ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="World Fine Bio Chemicals"><img src="assets/images/logo.png" alt="World Fine Bio Chemicals" class="nav-logo-img"/></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-a">Home</a>
+      <a href="products.html" class="nav-a nav-a--active">Products</a>
+      <a href="contact.html" class="nav-a">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Send Enquiry</a>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════
+       1 · HERO — asymmetric split, product as the reveal
+  ══════════════════════════════════════════════════════ -->
+  <header class="pd-hero" id="pd-hero">
+    <div class="pd-hero-tint" aria-hidden="true"></div>
+
+    <div class="pd-hero-inner">
+      <div class="pd-hero-text">
+        <nav class="pd-crumb" aria-label="Breadcrumb">
+          <a href="products.html">Products</a>
+          <span class="pd-crumb-sep" aria-hidden="true">/</span>
+          <span id="pd-crumb-now" aria-current="page">Product</span>
+        </nav>
+
+        <p class="pd-eyebrow" id="pd-eyebrow"></p>
+
+        <h1 class="pd-title" id="pd-title"></h1>
+
+        <p class="pd-tagline" id="pd-tagline"></p>
+
+        <div class="pd-hero-act">
+          <button type="button" class="pd-btn pd-btn--fill" data-enquiry>
+            Send Enquiry
+            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 5h6M5 2l3 3-3 3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="pd-hero-media">
+        <div class="pd-hero-glow" aria-hidden="true"></div>
+        <div class="pd-hero-frame" id="pd-hero-frame">
+          <img id="pd-hero-img" alt="" width="1400" height="1050" />
+        </div>
+      </div>
+    </div>
+
+    <div class="pd-hero-scroll" aria-hidden="true">
+      <span class="pd-hero-scroll-line"></span>
+      Scroll
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       2 · KEY SPECS STRIP
+  ══════════════════════════════════════════════════════ -->
+  <section class="pd-strip" aria-label="Key specifications">
+    <div class="pd-strip-inner" id="pd-strip"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       3 · GALLERY — vertical scroll drives horizontal travel
+  ══════════════════════════════════════════════════════ -->
+  <section class="pd-gallery" id="pd-gallery" aria-label="Product gallery">
+    <div class="pd-gallery-vp" id="pd-gallery-vp">
+      <div class="pd-gallery-track" id="pd-gallery-track"></div>
+    </div>
+    <p class="pd-gallery-count" aria-hidden="true">
+      <span id="pd-gal-i">01</span><span class="pd-gallery-slash">/</span><span id="pd-gal-n">05</span>
+    </p>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       4 · DESCRIPTION
+  ══════════════════════════════════════════════════════ -->
+  <section class="pd-desc" aria-label="Product description">
+    <div class="pd-desc-inner">
+      <blockquote class="pd-desc-quote" id="pd-desc-quote"></blockquote>
+      <div class="pd-desc-body" id="pd-desc-body"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       5 · SPECIFICATIONS
+  ══════════════════════════════════════════════════════ -->
+  <section class="pd-specs" id="pd-specs" aria-label="Full specifications">
+    <div class="pd-specs-inner">
+      <div class="pd-specs-head">
+        <h2 class="pd-h2">Specifications</h2>
+        <p class="pd-specs-note">Every batch ships with a certificate of analysis matching these figures.</p>
+      </div>
+      <dl class="pd-specs-list" id="pd-specs-list"></dl>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       6 · APPLICATIONS
+  ══════════════════════════════════════════════════════ -->
+  <section class="pd-apps" aria-label="Applications">
+    <div class="pd-apps-inner">
+      <h2 class="pd-h2 pd-h2--light">Where it works</h2>
+      <div class="pd-apps-grid" id="pd-apps-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       7 · ORDER
+  ══════════════════════════════════════════════════════ -->
+  <section class="pd-order" id="pd-order" aria-label="Place an order">
+    <div class="pd-orbit" aria-hidden="true">
+      <span class="pd-dot"></span><span class="pd-dot"></span><span class="pd-dot"></span>
+      <span class="pd-dot"></span><span class="pd-dot"></span><span class="pd-dot"></span>
+    </div>
+    <div class="pd-order-inner">
+      <h2 class="pd-order-h" id="pd-order-h">Ready to <em>order?</em></h2>
+      <p class="pd-order-p" id="pd-order-p">Tell us the grade and quantity. We reply with pricing, availability and lead time within 24 hours.</p>
+      <div class="pd-order-act">
+        <button type="button" class="pd-btn pd-btn--green" data-enquiry>
+          Send Enquiry
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 5h6M5 2l3 3-3 3"/></svg>
+        </button>
+        <a href="tel:+917922874567" class="pd-btn pd-btn--ghost" title="Direct Line to Abhishek Bhanderi">Call +91 79 2287 4567 · Abhishek Bhanderi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       8 · RELATED
+  ══════════════════════════════════════════════════════ -->
+  <section class="pd-rel" aria-label="Related products">
+    <div class="pd-rel-inner">
+      <div class="pd-rel-head">
+        <h2 class="pd-h2 pd-h2--light">Also from WFBC</h2>
+      </div>
+      <div class="pd-rel-grid" id="pd-rel-grid"></div>
+      <div class="pd-rel-more">
+        <a href="products.html" class="pd-btn pd-btn--green">
+          View all products
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 5h6M5 2l3 3-3 3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER — identical to index.html
+  ══════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-brand-wrap">
+          <a href="index.html" class="ft-brand-link" aria-label="World Fine Bio Chemicals">
+            <img src="assets/images/logo.png" alt="World Fine Bio Chemicals" class="ft-logo-img" />
+            <span class="ft-brand-name">World Fine Bio Chemicals</span>
+          </a>
+        </div>
+        <p class="ft-tag">Chemistry for the field, the factory, and the shelf. High-purity bio chemicals formulated and supplied from Ahmedabad, Gujarat.</p>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-h">Products</div>
+        <ul>
+          <li><a href="products.html#c-agro">Agro Chemicals</a></li>
+          <li><a href="products.html#c-fertilizer">Fertilizers</a></li>
+          <li><a href="products.html#c-industrial">Industrial Chemicals</a></li>
+          <li><a href="products.html#c-lab">Lab Chemicals</a></li>
+          <li><a href="products.html#c-food">Food Additives</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-h">Company</div>
+        <ul>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#founder">Our Story</a></li>
+          <li><a href="index.html#vision">Vision &amp; Infrastructure</a></li>
+          <li><a href="contact.html">Contact &amp; Enquiries</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-h">Reach Us</div>
+        <ul>
+          <li>
+            <a href="tel:+917922874567" class="ft-contact-item">
+              <strong>+91 79 2287 4567</strong>
+              <span class="ft-sub">Abhishek Bhanderi · Direct Line</span>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="ft-addr-item">
+              <span>1st Floor, Inca Complex, Above Sawan Hotel,</span><br/>
+              <span>Sanand Chokdi, Sarkhej, Ahmedabad</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@worldfinebiochem.com">info@worldfinebiochem.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span>&copy; 2026 World Fine Bio Chemicals. All rights reserved.</span>
+      <span>Abhishek Bhanderi · Founder &amp; Commercial Lead</span>
+      <span>Sanand Chokdi, Sarkhej, Ahmedabad</span>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════
+       ENQUIRY DRAWER
+  ══════════════════════════════════════════════════════ -->
+  <div class="pd-drawer-root" id="pd-drawer-root" hidden>
+    <div class="pd-drawer-scrim" id="pd-drawer-scrim"></div>
+
+    <aside class="pd-drawer" id="pd-drawer" role="dialog" aria-modal="true" aria-labelledby="pd-drawer-h">
+      <button type="button" class="pd-drawer-x" id="pd-drawer-x" aria-label="Close enquiry form">
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+          <path d="M2 2l8 8M10 2l-8 8" />
+        </svg>
+      </button>
+
+      <div class="pd-drawer-body" id="pd-drawer-body">
+        <p class="pd-drawer-k">Enquiry</p>
+        <h2 class="pd-drawer-h" id="pd-drawer-h">Tell us what you need</h2>
+        <p class="pd-drawer-sub">Grade, quantity and delivery window. We answer within one working day.</p>
+
+        <form class="pd-form" id="pd-form" novalidate>
+          <label class="pd-field">
+            <span class="pd-field-k">Product</span>
+            <input type="text" id="pd-f-product" name="product" readonly />
+          </label>
+          <label class="pd-field">
+            <span class="pd-field-k">Name</span>
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label class="pd-field">
+            <span class="pd-field-k">Company</span>
+            <input type="text" name="company" autocomplete="organization" />
+          </label>
+          <label class="pd-field">
+            <span class="pd-field-k">Phone</span>
+            <input type="tel" name="phone" autocomplete="tel" required />
+          </label>
+          <label class="pd-field">
+            <span class="pd-field-k">Requirements</span>
+            <textarea name="requirements" rows="4" placeholder="Quantity, pack size, delivery location"></textarea>
+          </label>
+          <p class="pd-form-err" id="pd-form-err" role="alert" hidden></p>
+          <button type="submit" class="pd-btn pd-btn--green pd-form-submit">
+            Send Enquiry
+            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 5h6M5 2l3 3-3 3"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="pd-drawer-done" id="pd-drawer-done" hidden>
+        <span class="pd-done-mark" aria-hidden="true">
+          <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M6 14.5l5.5 5.5L22 9" pathLength="1" />
+          </svg>
+        </span>
+        <h2 class="pd-drawer-h">Enquiry sent</h2>
+        <p class="pd-drawer-sub" id="pd-done-sub">We have your request. Expect a reply within one working day.</p>
+        <button type="button" class="pd-btn pd-btn--ghost" id="pd-done-close">Close</button>
+      </div>
+    </aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" crossorigin="anonymous"></script>
+  <script src="assets/js/products-data.js?v=2"></script>
+  <script src="assets/js/product-detail.js?v=12"></script>
+</body>
+
+</html>
