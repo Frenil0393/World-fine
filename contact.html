@@ -5,201 +5,593 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Contact &amp; Enquiries — World Fine Bio Chemicals</title>
 <meta name="description" content="Send a product enquiry to World Fine Bio Chemicals. Talk directly with Abhishek Bhanderi. Bulk chemicals, agro chemicals, fertilizers, lab chemicals — Ahmedabad, Gujarat."/>
+<meta name="robots" content="index, follow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/css/style.css?v=2"/>
-<link rel="stylesheet" href="assets/css/contact.css?v=1"/>
+<link rel="stylesheet" href="assets/css/contact.css?v=5"/>
 </head>
 <body class="contact-page">
 
-<!-- NAV — identical across all pages -->
+
+<!-- ── NAV ──────────────────────────────────────────────────── -->
 <nav id="nav" role="navigation" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo" aria-label="World Fine Bio Chemicals"><img src="assets/images/logo.png" alt="World Fine Bio Chemicals" class="nav-logo-img"/></a>
+  <a href="index.html" class="nav-logo" aria-label="World Fine Bio Chemicals">
+    <img src="assets/images/logo.png" alt="World Fine Bio Chemicals" class="nav-logo-img"/>
+  </a>
   <div class="nav-links">
     <a href="index.html" class="nav-a">Home</a>
     <a href="products.html" class="nav-a">Products</a>
     <a href="contact.html" class="nav-a nav-a--active" aria-current="page">Contact</a>
   </div>
-  <a href="contact.html" class="nav-cta" id="nav-enq">Send Enquiry</a>
+  <a href="#contact-form-section" class="nav-cta" id="nav-enq" data-scroll>Send Enquiry</a>
 </nav>
 
-<!-- HERO -->
-<section id="hero" class="hero--contact" aria-label="Contact World Fine Bio Chemicals">
-  <div class="hero-image-bg" aria-hidden="true">
-    <div class="hero-img-scroll" id="hero-img-scroll">
-      <div class="hero-img-float ct-hero-img"></div>
+<!-- ══════════════════════════════════════════════════════════
+     HERO — 3D Immersive Canvas
+════════════════════════════════════════════════════════════ -->
+<section id="ct-hero" class="ct-hero" aria-label="Contact World Fine Bio Chemicals">
+  
+  <!-- Three.js 3D Canvas -->
+  <canvas id="ct-canvas" aria-hidden="true"></canvas>
+
+  <!-- Hero BG Image (as fallback layer) -->
+  <div class="ct-hero-bg" aria-hidden="true">
+    <div class="ct-hero-img-wrap" id="ct-parallax-img">
+      <div class="ct-hero-bg-img"></div>
     </div>
+    <div class="ct-hero-vignette"></div>
   </div>
-  <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="hero-content">
-    <div class="hero-head">
-      <p class="hero-label">
-        <span class="hero-label-line"></span>
-        Enquiries — Gujarat, India
-      </p>
-      <h1 class="hero-h1" aria-label="Let's talk.">
-        <span class="hero-h1-line"><span class="hero-h1-word">Let's</span></span>
-        <span class="hero-h1-line"><span class="hero-h1-word italic">talk.</span></span>
-      </h1>
+
+  <!-- Grid overlay decoration -->
+  <div class="ct-hero-grid" aria-hidden="true"></div>
+
+  <!-- Floating badges -->
+  <div class="ct-badge ct-badge--tl ct-badge-anim" aria-hidden="true">
+    <span class="ct-badge-dot"></span>
+    <span class="ct-badge-text">Gujarat · India</span>
+  </div>
+  <div class="ct-badge ct-badge--tr ct-badge-anim" aria-hidden="true" style="--bd:0.3s">
+    <span class="ct-badge-dot"></span>
+    <span class="ct-badge-text">Est. by Abhishek Bhanderi</span>
+  </div>
+
+  <!-- Main content -->
+  <div class="ct-hero-content">
+    <div class="ct-hero-eyebrow" data-split>
+      <span class="ct-hero-eyebrow-line"></span>
+      Enquiries &amp; Partnerships
     </div>
-    <div class="hero-foot">
-      <p class="hero-desc">We reply with pricing, availability and lead time within 24 hours. Send a product enquiry or call Abhishek directly.</p>
-      <a href="#contact-form-section" class="hero-cta" data-scroll>
-        Send an enquiry
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
-          <path d="M1 5.5h9M5.5 1l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+    <h1 class="ct-hero-h1" id="ct-hero-h1" aria-label="Let's build something together.">
+      <span class="ct-h1-line" data-line="0"><span class="ct-h1-word">Let's</span></span>
+      <span class="ct-h1-line" data-line="1"><span class="ct-h1-word"><em>connect.</em></span></span>
+    </h1>
+    <p class="ct-hero-sub" data-split>We reply with pricing, availability &amp; lead time within 24 hours. Talk directly with Abhishek.</p>
+    <div class="ct-hero-actions">
+      <a href="#contact-form-section" class="ct-hero-btn ct-hero-btn--primary" data-scroll id="ct-hero-cta">
+        <span class="ct-btn-bg"></span>
+        <span class="ct-btn-label">Send Enquiry</span>
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+          <path d="M1 6.5h11M7 1l5.5 5.5L7 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
+      </a>
+      <a href="tel:+917922874567" class="ct-hero-btn ct-hero-btn--ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.61 21 3 14.39 3 6c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+        <span>+91 79 2287 4567</span>
       </a>
     </div>
   </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <span class="hero-scroll-line"></span>
-    Scroll
+
+  <!-- Scroll indicator -->
+  <div class="ct-hero-scroll" aria-hidden="true">
+    <div class="ct-scroll-line"></div>
+    <span>Scroll</span>
   </div>
+
+  <!-- 3D depth cards floating in hero -->
+  <div class="ct-depth-cards" aria-hidden="true">
+    <div class="ct-depth-card" style="--x:72%;--y:22%;--d:0s">
+      <span class="ct-depth-card-num">500+</span>
+      <span class="ct-depth-card-label">Clients</span>
+    </div>
+    <div class="ct-depth-card" style="--x:78%;--y:58%;--d:0.2s">
+      <span class="ct-depth-card-num">24h</span>
+      <span class="ct-depth-card-label">Response</span>
+    </div>
+    <div class="ct-depth-card" style="--x:65%;--y:80%;--d:0.4s">
+      <span class="ct-depth-card-num">15+</span>
+      <span class="ct-depth-card-label">Years</span>
+    </div>
+  </div>
+
 </section>
 
-<!-- TICKER -->
+<!-- ── TICKER ──────────────────────────────────────────────── -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track" id="ticker-track"></div>
 </div>
 
-<!-- CONTACT SECTION -->
-<section class="ct-strip" id="contact-form-section" aria-label="Contact details and enquiry form">
-  <div class="ct-strip-inner">
+<!-- ══════════════════════════════════════════════════════════
+     CONTACT INFO STRIP — 3 glassy cards
+════════════════════════════════════════════════════════════ -->
+<section class="ct-cards-section" aria-label="Contact information">
+  <div class="ct-cards-inner">
 
-    <!-- LEFT -->
-    <div class="ct-left">
-      <p class="section-label ct-rv">Get in Touch</p>
-      <h2 class="ct-h ct-rv">Tell us the product,<br/><em>grade &amp; quantity.</em></h2>
-      <p class="ct-sub ct-rv">We reply with pricing, availability and lead time within 24 hours. No long forms — just your requirement and we handle the rest.</p>
-
-      <!-- Founder card -->
-      <div class="ct-founder ct-rv" aria-label="Abhishek Bhanderi — contact person">
-        <div class="ct-founder-img">
-          <img src="assets/images/founder-abhishek.jpg" alt="Abhishek Bhanderi, Owner — World Fine Bio Chemicals" loading="lazy"/>
-        </div>
-        <div class="ct-founder-info">
-          <div class="ct-founder-name">Abhishek Bhanderi</div>
-          <div class="ct-founder-role">Owner &amp; Brand Lead — WFBC</div>
-          <p class="ct-founder-note">"Every enquiry is handled personally. You will hear back from me within a business day."</p>
-        </div>
+    <div class="ct-info-card ct-rv" style="--d:0s" id="ct-card-phone">
+      <div class="ct-info-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.61 21 3 14.39 3 6c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
       </div>
-
-      <!-- Contact details -->
-      <div class="ct-details">
-        <a href="tel:+917922874567" class="ct-det ct-rv" aria-label="Call us">
-          <div class="ct-det-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.61 21 3 14.39 3 6c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="ct-det-label">Phone</div>
-            <div class="ct-det-value">+91 79 2287 4567</div>
-          </div>
-        </a>
-        <div class="ct-det ct-rv" aria-label="Our location">
-          <div class="ct-det-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="ct-det-label">Factory &amp; Registered Office</div>
-            <div class="ct-det-value">1st Floor, Inca Complex, Above Sawan Hotel,<br/>Sanand Chokdi, Sarkhej, Ahmedabad</div>
-          </div>
-        </div>
-        <div class="ct-det ct-rv" aria-label="Response time">
-          <div class="ct-det-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
-            </svg>
-          </div>
-          <div>
-            <div class="ct-det-label">Response Time</div>
-            <div class="ct-det-value">Within 24 hours</div>
-          </div>
-        </div>
-      </div>
+      <div class="ct-info-card-label">Direct Line</div>
+      <a href="tel:+917922874567" class="ct-info-card-val">+91 79 2287 4567</a>
+      <div class="ct-info-card-note">Abhishek Bhanderi · Owner</div>
+      <div class="ct-info-card-glow"></div>
     </div>
 
-    <!-- RIGHT: Enquiry form -->
-    <div class="ct-right">
-      <div class="ct-form-wrap ct-rv">
-        <div class="ct-form-head">
-          <span class="ct-form-badge">Enquiry Form</span>
-          <h3 class="ct-form-h">Send an Enquiry</h3>
-          <p class="ct-form-sub">Share the product, grade, and quantity. We'll respond with pricing and availability.</p>
-        </div>
-        <form id="contact-form" class="ct-form" novalidate>
-          <div class="ct-fg-row">
-            <div class="ct-fg">
-              <input type="text" id="ct-fn" placeholder=" " required autocomplete="name"/>
-              <label for="ct-fn">Full Name</label>
-              <span class="ct-fg-line"></span>
-            </div>
-            <div class="ct-fg">
-              <input type="tel" id="ct-fp" placeholder=" " autocomplete="tel"/>
-              <label for="ct-fp">Phone Number</label>
-              <span class="ct-fg-line"></span>
-            </div>
-          </div>
-          <div class="ct-fg">
-            <input type="email" id="ct-fe" placeholder=" " autocomplete="email"/>
-            <label for="ct-fe">Email Address</label>
-            <span class="ct-fg-line"></span>
-          </div>
-          <div class="ct-fg">
-            <input type="text" id="ct-fc-product" placeholder=" "/>
-            <label for="ct-fc-product">Product Name / Category</label>
-            <span class="ct-fg-line"></span>
-          </div>
-          <div class="ct-fg-row">
-            <div class="ct-fg">
-              <input type="text" id="ct-grade" placeholder=" "/>
-              <label for="ct-grade">Grade / Purity</label>
-              <span class="ct-fg-line"></span>
-            </div>
-            <div class="ct-fg">
-              <input type="text" id="ct-qty" placeholder=" "/>
-              <label for="ct-qty">Quantity Required</label>
-              <span class="ct-fg-line"></span>
-            </div>
-          </div>
-          <div class="ct-fg">
-            <textarea id="ct-msg" placeholder=" " rows="3"></textarea>
-            <label for="ct-msg">Additional Requirements</label>
-            <span class="ct-fg-line"></span>
-          </div>
-          <button type="submit" class="ct-submit" id="ct-submit">
-            <span class="ct-submit-text">Send Enquiry</span>
-            <svg class="ct-submit-icon" width="14" height="14" viewBox="0 0 11 11" fill="none" aria-hidden="true">
-              <path d="M1 5.5h9M5.5 1l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <div class="ct-success" id="ct-success" aria-live="polite" hidden>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" aria-hidden="true">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            Enquiry sent! Abhishek will reply within 24 hours.
-          </div>
-        </form>
+    <div class="ct-info-card ct-rv" style="--d:0.12s" id="ct-card-addr">
+      <div class="ct-info-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+        </svg>
       </div>
+      <div class="ct-info-card-label">Office &amp; Factory</div>
+      <div class="ct-info-card-val" style="font-size:clamp(0.95rem,1.4vw,1.1rem)">1st Floor, Inca Complex,<br/>Sanand Chokdi, Sarkhej,<br/>Ahmedabad, Gujarat</div>
+      <div class="ct-info-card-note">Registered &amp; Production</div>
+      <div class="ct-info-card-glow"></div>
+    </div>
+
+    <div class="ct-info-card ct-rv" style="--d:0.24s" id="ct-card-clock">
+      <div class="ct-info-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <div class="ct-info-card-label">Response Time</div>
+      <div class="ct-info-card-val">Within 24 Hours</div>
+      <div class="ct-info-card-note">Mon–Sat · Business Days</div>
+      <div class="ct-info-card-clock-visual" id="ct-clock-visual" aria-hidden="true">
+        <div class="ct-clock-ring"></div>
+        <div class="ct-clock-hand ct-clock-hour"></div>
+        <div class="ct-clock-hand ct-clock-min"></div>
+      </div>
+      <div class="ct-info-card-glow"></div>
     </div>
 
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══════════════════════════════════════════════════════════
+     MAIN CONTACT SECTION
+════════════════════════════════════════════════════════════ -->
+<section id="contact-form-section" class="ct-main-section" aria-label="Contact and enquiry form">
+
+  <!-- Section background 3D canvas -->
+  <div class="ct-main-bg" aria-hidden="true">
+    <div class="ct-main-bg-mesh"></div>
+    <div class="ct-main-bg-orb ct-main-bg-orb--1"></div>
+    <div class="ct-main-bg-orb ct-main-bg-orb--2"></div>
+  </div>
+
+  <div class="ct-main-inner">
+
+    <!-- ── LEFT COLUMN ── -->
+    <div class="ct-left">
+
+      <!-- Section label -->
+      <p class="section-label rv">Get In Touch</p>
+
+      <!-- Heading -->
+      <h2 class="ct-main-h rv" style="--d:0.05s">
+        Tell us the product,<br/>
+        <em>grade &amp; quantity.</em>
+      </h2>
+
+      <p class="ct-main-sub rv" style="--d:0.1s">We reply with pricing, availability, and lead time within 24 hours. No long forms — just your requirement and we handle the rest.</p>
+
+      <!-- Guarantees grid -->
+      <div class="ct-guarantees rv" style="--d:0.15s">
+        <div class="ct-g-item">
+          <span class="ct-g-val">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green)" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            &lt; 24 Hours
+          </span>
+          <span class="ct-g-lbl">Guaranteed quotation turnaround</span>
+        </div>
+        <div class="ct-g-item">
+          <span class="ct-g-val">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green)" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            100% Tested
+          </span>
+          <span class="ct-g-lbl">Batch COA &amp; technical specs included</span>
+        </div>
+        <div class="ct-g-item">
+          <span class="ct-g-val">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--green)" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Flexible MOQ
+          </span>
+          <span class="ct-g-lbl">25kg bags to multi-ton bulk shipments</span>
+        </div>
+      </div>
+
+      <!-- Founder card -->
+      <div class="ct-founder-card rv" id="ct-founder-tilt" style="--d:0.2s" aria-label="Abhishek Bhanderi — contact person">
+        <div class="ct-founder-card-inner">
+          <div class="ct-founder-card-img">
+            <img src="assets/images/founder-abhishek.jpg" alt="Abhishek Bhanderi, Owner — World Fine Bio Chemicals" loading="lazy"/>
+            <div class="ct-founder-img-ring"></div>
+          </div>
+          <div class="ct-founder-card-text">
+            <div class="ct-founder-name">Abhishek Bhanderi</div>
+            <div class="ct-founder-role">Founder &amp; Commercial Director · WFBC</div>
+            <p class="ct-founder-quote">"Every enquiry is handled personally. You will hear back from me within a business day."</p>
+          </div>
+        </div>
+        <div class="ct-founder-card-accent"></div>
+        <div class="ct-founder-status" aria-label="Online and responding">
+          <span class="ct-status-dot"></span>
+          Available now
+        </div>
+      </div>
+
+      <!-- Contact detail items -->
+      <div class="ct-details-list">
+
+        <a href="tel:+917922874567" class="ct-detail-item rv" style="--d:0.25s" aria-label="Call Abhishek Bhanderi">
+          <div class="ct-detail-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.61 21 3 14.39 3 6c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </div>
+          <div class="ct-detail-body">
+            <div class="ct-detail-label">Phone</div>
+            <div class="ct-detail-val">+91 79 2287 4567</div>
+          </div>
+          <div class="ct-detail-arrow">
+            <svg width="12" height="12" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+              <path d="M1 6.5h11M7 1l5.5 5.5L7 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="mailto:info@worldfinebiochem.com" class="ct-detail-item rv" style="--d:0.3s" aria-label="Email World Fine Bio Chemicals">
+          <div class="ct-detail-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="ct-detail-body">
+            <div class="ct-detail-label">Email</div>
+            <div class="ct-detail-val">info@worldfinebiochem.com</div>
+          </div>
+          <div class="ct-detail-arrow">
+            <svg width="12" height="12" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+              <path d="M1 6.5h11M7 1l5.5 5.5L7 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+
+        <div class="ct-detail-item ct-rv" style="--d:0.3s" aria-label="Our location">
+          <div class="ct-detail-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+            </svg>
+          </div>
+          <div class="ct-detail-body">
+            <div class="ct-detail-label">Factory &amp; Office</div>
+            <div class="ct-detail-val">Inca Complex, Sanand Chokdi,<br/>Sarkhej, Ahmedabad, Gujarat</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- What we supply tags -->
+      <div class="ct-supply-tags rv" style="--d:0.4s" aria-label="Products we supply">
+        <div class="ct-supply-tags-label">We Supply</div>
+        <div class="ct-supply-tags-list">
+          <span class="ct-tag">Agro Chemicals</span>
+          <span class="ct-tag">PGR</span>
+          <span class="ct-tag">Fertilizers</span>
+          <span class="ct-tag">WSF</span>
+          <span class="ct-tag">Industrial Chemicals</span>
+          <span class="ct-tag">Solvents</span>
+          <span class="ct-tag">Lab Chemicals</span>
+          <span class="ct-tag">Food Additives</span>
+          <span class="ct-tag">Glassware</span>
+        </div>
+      </div>
+
+    </div><!-- /ct-left -->
+
+    <!-- ── RIGHT COLUMN — 3D Glassmorphic Form ── -->
+    <div class="ct-right">
+
+      <div class="ct-form-3d-wrap ct-rv" id="ct-form-tilt" style="--d:0.08s">
+        
+        <!-- Glowing orbs inside form -->
+        <div class="ct-form-orb ct-form-orb--1" aria-hidden="true"></div>
+        <div class="ct-form-orb ct-form-orb--2" aria-hidden="true"></div>
+
+        <!-- Form header -->
+        <div class="ct-form-header">
+          <div class="ct-form-badge">
+            <span class="ct-form-badge-dot"></span>
+            Enquiry Form
+          </div>
+          <h3 class="ct-form-title">Send an <em>Enquiry</em></h3>
+          <p class="ct-form-desc">Share the product, grade, and quantity.<br/>We'll respond with pricing and availability.</p>
+        </div>
+
+        <!-- Step indicators -->
+        <div class="ct-form-steps" aria-label="Form progress">
+          <div class="ct-form-step is-active" data-step="1">
+            <div class="ct-step-num">1</div>
+            <div class="ct-step-label">Your Info</div>
+          </div>
+          <div class="ct-form-step-line"></div>
+          <div class="ct-form-step" data-step="2">
+            <div class="ct-step-num">2</div>
+            <div class="ct-step-label">Product</div>
+          </div>
+          <div class="ct-form-step-line"></div>
+          <div class="ct-form-step" data-step="3">
+            <div class="ct-step-num">3</div>
+            <div class="ct-step-label">Details</div>
+          </div>
+        </div>
+
+        <!-- THE FORM -->
+        <form id="contact-form" class="ct-form" novalidate>
+
+          <!-- Step 1: Personal Info -->
+          <div class="ct-form-panel is-active" data-panel="1">
+            <div class="ct-fg-row">
+              <div class="ct-fg">
+                <div class="ct-fg-inner">
+                  <input type="text" id="ct-fn" name="fullName" placeholder=" " required autocomplete="name"/>
+                  <label for="ct-fn">Full Name <span class="ct-req">*</span></label>
+                  <div class="ct-fg-border"></div>
+                  <div class="ct-fg-glow"></div>
+                </div>
+              </div>
+              <div class="ct-fg">
+                <div class="ct-fg-inner">
+                  <input type="tel" id="ct-fp" name="phone" placeholder=" " autocomplete="tel"/>
+                  <label for="ct-fp">Phone Number</label>
+                  <div class="ct-fg-border"></div>
+                  <div class="ct-fg-glow"></div>
+                </div>
+              </div>
+            </div>
+            <div class="ct-fg">
+              <div class="ct-fg-inner">
+                <input type="email" id="ct-fe" name="email" placeholder=" " autocomplete="email"/>
+                <label for="ct-fe">Email Address</label>
+                <div class="ct-fg-border"></div>
+                <div class="ct-fg-glow"></div>
+              </div>
+            </div>
+            <div class="ct-fg">
+              <div class="ct-fg-inner">
+                <input type="text" id="ct-company" name="company" placeholder=" " autocomplete="organization"/>
+                <label for="ct-company">Company / Organization</label>
+                <div class="ct-fg-border"></div>
+                <div class="ct-fg-glow"></div>
+              </div>
+            </div>
+            <button type="button" class="ct-form-next" id="ct-step1-next">
+              <span>Continue</span>
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                <path d="M1 6.5h11M7 1l5.5 5.5L7 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Step 2: Product -->
+          <div class="ct-form-panel" data-panel="2">
+            <div class="ct-fg">
+              <div class="ct-fg-inner">
+                <input type="text" id="ct-product" name="product" placeholder=" " required/>
+                <label for="ct-product">Product Name / Category <span class="ct-req">*</span></label>
+                <div class="ct-fg-border"></div>
+                <div class="ct-fg-glow"></div>
+              </div>
+            </div>
+            <div class="ct-fg-row">
+              <div class="ct-fg">
+                <div class="ct-fg-inner">
+                  <input type="text" id="ct-grade" name="grade" placeholder=" "/>
+                  <label for="ct-grade">Grade / Purity</label>
+                  <div class="ct-fg-border"></div>
+                  <div class="ct-fg-glow"></div>
+                </div>
+              </div>
+              <div class="ct-fg">
+                <div class="ct-fg-inner">
+                  <input type="text" id="ct-qty" name="quantity" placeholder=" "/>
+                  <label for="ct-qty">Quantity Required</label>
+                  <div class="ct-fg-border"></div>
+                  <div class="ct-fg-glow"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick-select categories -->
+            <div class="ct-quick-cats" aria-label="Quick category selection">
+              <div class="ct-quick-cats-label">Quick Select</div>
+              <div class="ct-quick-cats-btns">
+                <button type="button" class="ct-cat-btn" data-cat="Agro Chemical">Agro</button>
+                <button type="button" class="ct-cat-btn" data-cat="Fertilizer">Fertilizer</button>
+                <button type="button" class="ct-cat-btn" data-cat="Industrial Chemical">Industrial</button>
+                <button type="button" class="ct-cat-btn" data-cat="Lab Chemical">Lab</button>
+                <button type="button" class="ct-cat-btn" data-cat="Food Additive">Food</button>
+                <button type="button" class="ct-cat-btn" data-cat="Solvent">Solvent</button>
+              </div>
+            </div>
+
+            <div class="ct-form-nav">
+              <button type="button" class="ct-form-back" id="ct-step2-back">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                  <path d="M12 6.5H1M6 1L.5 6.5 6 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Back</span>
+              </button>
+              <button type="button" class="ct-form-next" id="ct-step2-next">
+                <span>Continue</span>
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                  <path d="M1 6.5h11M7 1l5.5 5.5L7 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Additional Details -->
+          <div class="ct-form-panel" data-panel="3">
+            <div class="ct-fg">
+              <div class="ct-fg-inner">
+                <textarea id="ct-msg" name="message" placeholder=" " rows="4"></textarea>
+                <label for="ct-msg">Additional Requirements</label>
+                <div class="ct-fg-border"></div>
+                <div class="ct-fg-glow"></div>
+              </div>
+            </div>
+
+            <!-- Urgency selector -->
+            <div class="ct-urgency-group" role="group" aria-labelledby="ct-urgency-label">
+              <div class="ct-urgency-label" id="ct-urgency-label">Urgency</div>
+              <div class="ct-urgency-btns">
+                <label class="ct-urgency-opt">
+                  <input type="radio" name="urgency" value="standard" checked/>
+                  <span class="ct-urgency-pill">Standard</span>
+                </label>
+                <label class="ct-urgency-opt">
+                  <input type="radio" name="urgency" value="urgent"/>
+                  <span class="ct-urgency-pill">Urgent</span>
+                </label>
+                <label class="ct-urgency-opt">
+                  <input type="radio" name="urgency" value="bulk"/>
+                  <span class="ct-urgency-pill">Bulk Order</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="ct-form-nav">
+              <button type="button" class="ct-form-back" id="ct-step3-back">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                  <path d="M12 6.5H1M6 1L.5 6.5 6 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Back</span>
+              </button>
+              <button type="submit" class="ct-submit" id="ct-submit">
+                <span class="ct-submit-ripple"></span>
+                <span class="ct-submit-label">Send Enquiry</span>
+                <div class="ct-submit-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="22" y1="2" x2="11" y2="13"/>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Success state -->
+          <div class="ct-success" id="ct-success" aria-live="polite" hidden>
+            <div class="ct-success-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <div class="ct-success-text">
+              <div class="ct-success-title">Enquiry Sent!</div>
+              <div class="ct-success-sub">Abhishek will reply within 24 hours.</div>
+            </div>
+          </div>
+
+        </form>
+
+        <!-- Form decoration grid -->
+        <div class="ct-form-grid-deco" aria-hidden="true"></div>
+
+      </div><!-- /ct-form-3d-wrap -->
+
+    </div><!-- /ct-right -->
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     MAP / LOCATION SECTION
+════════════════════════════════════════════════════════════ -->
+<section class="ct-location-section" aria-label="Our location in Ahmedabad">
+  <div class="ct-location-inner">
+    <div class="ct-location-text ct-rv">
+      <p class="section-label">Find Us</p>
+      <h2 class="ct-location-h">Based in the heart<br/>of <em>Gujarat.</em></h2>
+      <p class="ct-location-sub">Our factory and registered office is located at Inca Complex, Sanand Chokdi, Sarkhej — strategically placed for nationwide logistics and export.</p>
+      <a href="https://maps.google.com/?q=Inca+Complex+Sanand+Chokdi+Sarkhej+Ahmedabad" target="_blank" rel="noopener noreferrer" class="ct-location-btn" aria-label="Open location in Google Maps">
+        <span>Open in Maps</span>
+        <svg width="12" height="12" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+          <path d="M1 6.5h11M7 1l5.5 5.5L7 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+    <div class="ct-location-map-wrap ct-rv" style="--d:0.15s">
+      <div class="ct-location-map-bg">
+        <!-- Stylized map visual -->
+        <div class="ct-map-visual" aria-hidden="true">
+          <div class="ct-map-grid"></div>
+          <div class="ct-map-pin-wrap">
+            <div class="ct-map-pulse"></div>
+            <div class="ct-map-pin">
+              <svg width="28" height="36" viewBox="0 0 28 36" fill="none" aria-hidden="true">
+                <path d="M14 0C6.268 0 0 6.268 0 14c0 10.5 14 22 14 22s14-11.5 14-22C28 6.268 21.732 0 14 0z" fill="var(--green)"/>
+                <circle cx="14" cy="14" r="5" fill="white"/>
+              </svg>
+            </div>
+          </div>
+          <div class="ct-map-label">Sarkhej, Ahmedabad</div>
+          <div class="ct-map-roads">
+            <div class="ct-map-road ct-map-road--h"></div>
+            <div class="ct-map-road ct-map-road--v"></div>
+            <div class="ct-map-road ct-map-road--d1"></div>
+          </div>
+          <div class="ct-map-dots">
+            <div class="ct-map-dot" style="--mx:20%;--my:30%"></div>
+            <div class="ct-map-dot" style="--mx:75%;--my:65%"></div>
+            <div class="ct-map-dot" style="--mx:55%;--my:20%"></div>
+            <div class="ct-map-dot" style="--mx:85%;--my:40%"></div>
+          </div>
+        </div>
+        <div class="ct-location-card">
+          <div class="ct-location-card-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="ct-location-card-name">World Fine Bio Chemicals</div>
+            <div class="ct-location-card-addr">1st Floor, Inca Complex, Above Sawan Hotel, Sanand Chokdi, Sarkhej, Ahmedabad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
 <footer role="contentinfo">
   <div class="ft-grid">
     <div>
       <div class="ft-brand-wrap">
         <a href="index.html" class="ft-brand-link" aria-label="World Fine Bio Chemicals">
-          <img src="assets/images/logo.png" alt="World Fine Bio Chemicals" class="ft-logo-img" />
+          <img src="assets/images/logo.png" alt="World Fine Bio Chemicals" class="ft-logo-img"/>
           <span class="ft-brand-name">World Fine Bio Chemicals</span>
         </a>
       </div>
@@ -252,9 +644,11 @@
   </div>
 </footer>
 
+<!-- ── SCRIPTS ──────────────────────────────────────────────── -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" crossorigin="anonymous"></script>
-<script src="assets/js/contact.js?v=1"></script>
+<script src="assets/js/contact.js?v=4"></script>
 </body>
 </html>
